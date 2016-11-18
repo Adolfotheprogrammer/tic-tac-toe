@@ -2,41 +2,45 @@
 // You can use the namespace variable that's defined here.
 var namespace = "http://www.w3.org/2000/svg"
 
-
-function square1(){
-  var canvas = document.getElementById("game-board")
-  var circle = document.createElementNS(namespace,"circle")
-  circle.setAttribute("cx",50)
-  circle.setAttribute("cy",50)
-  circle.setAttribute("r",30)
-  circle.setAttribute("fill","white")
-  circle.setAttribute("fill-opacity",1)
-  canvas.appendChild(circle)
-}
-
+var canvas = document.getElementById("game-board")
+var circle = document.createElementNS(namespace,"circle")
+var whichplayer = 1
 var square1clicked = 0
-function amountsquare1cicked(){
-  if(square1clicked == 0){
+function square1(){
+  if (whichplayer == 1 ){
+    circle.setAttribute("cx",50)
+    circle.setAttribute("cy",50)
+    circle.setAttribute("r",30)
+    circle.setAttribute("fill","white")
+    circle.setAttribute("fill-opacity",1)
+    canvas.appendChild(circle)
     square1clicked = 1
+  } else{
+    var rect = document.createElementNS(namespace,"rect")
+    rect.setAttribute("x",50)
+    rect.setAttribute("y",50)
+    rect.setAttribute("height",20)
+    rect.setAttribute("width",20)
+    rect.setAttribute("fill","white")
+    canvas.appendChild(rect)
+    square1clicked = 2
   }
 }
-
+var square2clicked = 0
+var circle = document.createElementNS(namespace,"circle")
 function square2(){
-  var canvas = document.getElementById("game-board")
-  var circle = document.createElementNS(namespace,"circle")
+if(whichplayer == 1)
   circle.setAttribute("cx", 155)
   circle.setAttribute("cy", 50)
   circle.setAttribute("r", 30)
   circle.setAttribute("fill", "white")
   circle.setAttribute("fill-opacity",1)
   canvas.appendChild(circle)
-}
+  square2clicked = 1
+} else{
+  
+ }
 
-var square2clicked = 0
-function amountsquare2cicked(){
-  if(square2clicked = 0){
-    square2clicked = 1
-  }
 }
 
 function square3(){
@@ -52,15 +56,27 @@ function square3(){
 
 var square3clicked = 0
 function amountsquare3cicked(){
-  if(square3clicked = 0){
+  if(square3clicked == 0){
     square3clicked = 1
   }
 }
 
-var player1 = 1
+var whichplayer = 1
 function whoseturn(){
-  if (player1 = 1 ){
-    player1 = "circle"
-  } else if(player1 = 2)
-  player1
+  if (whichplayer == 1 ){
+    var rect = document.createElementNS(namespace,"rect")
+    rect.setAttribute("x",50)
+    rect.setAttribute("y",50)
+    rect.setAttribute("height",20)
+    rect.setAttribute("width",20)
+    rect.setAttribute("fill","white")
+    canvas.appendChild(rect)
+    whichplayer = 2
+  } else{
+var circle = document.getElementById("circle")
+
+    whichplayer = 1
+  }
+
+
 }
